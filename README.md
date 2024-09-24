@@ -43,7 +43,7 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
 ## Requirements
 
 ### Business Requirments
-#### Epic-01 :: **Core System (ClearView) Module:**
+#### Epic-01 :: **Core System Module:**
 - **US-01:** As the ClearView system, I want to **generate AI-based resume tips,** so that job seekers can imprtes.
 - **US-02:** As the ClearView system, I want to **manage invoicing for resume unlocks,** so that recruiters are charged for unlocking candidate information.
 - **US-03:**  As the ClearView system, I want to **gather metrics and analytics,** so that system performance and user behavior can be monitored and improved.ove their resumes.
@@ -66,7 +66,7 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
 - **US-14:** As an admin, I want to **manage user information and internal data,** so that I can ensure system operations run smoothly.
 - **US-15:** As an admin, I want to **generate analytics and reports,** so that I can provide insights on system usage and candidate-employer interactions.
 
-### Epic-05 :: **Technical Requirements:**
+#### Epic-05 :: **Technical Requirements:**
 - **US-16:** Richest user interface possible across all deployment platforms.
 - **US-17:** Users must be able to access the system at all times (max 5 minutes per month of unplanned downtime).
 - **US-18:** Response time from web (800ms) and mobile (First-contentful paint of under 1.4 sec)
