@@ -11,13 +11,13 @@ Accepted
 The ClearView platform must process candidate actions such as uploadresumes, updating resumes, search jobs, and finding tips. These actions must be handled in near real-time to ensure efficiency and provide a seamless user experience.
 The ClearView platform must process employer actions such as finding candidates, updating resumes, search jobs, and finding tips. These actions must be handled in near real-time to ensure efficiency and provide a seamless user experience.
 
-## Decision:
+### Decision:
 We will adopt an Event-Driven Architecture (EDA) to decouple the services and enable real-time communication across the services and components.
 # Drivers
 - Scalability: The platform needs to handle an increasing volume of candidates,employers,resumes, jobs, and jobmatching.
 - Decoupling: Services like Job, resume , jobmatching should operate independently to allow for easier updates and better fault tolerance.
 - Real-Time Processing: Candidates and employers expect immediate result after their actions.
-# Scenarios
+### Scenarios
 - When a candidate upload resume, the  application generates an event (e.g., resumeuploadevent) with file details.
 - This event is published to an event broker  where other components ( e.g., resume parser,jobmatcher) can listen and react accordingly.
 - After the resumeuploadevent is processed, other events like ResumeParsed and storycreated can trigger subsequent services.
