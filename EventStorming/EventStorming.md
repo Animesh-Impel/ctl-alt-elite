@@ -44,14 +44,20 @@ This phase defined the actors and commands necessary for user interaction with t
 
 
 **user role**:
-- nurse - frontline healthcare providers responsible for the setup of patient monitoring devices, ongoing monitoring, and responding to system-generated alerts and notifications.
-- medical professionals - healthcare providers, including doctors and specialists, use the system for detailed analysis of patient health data and create snapshot data.
+- candidate - frontline healthcare providers responsible for the setup of patient monitoring devices, ongoing monitoring, and responding to system-generated alerts and notifications.
+- employer - healthcare providers, including doctors and specialists, use the system for detailed analysis of patient health data and create snapshot data.
+- admin - healthcare providers, including doctors and specialists, use the system for detailed analysis of patient health data and create snapshot data.
 
 **commands**:
-- time interval - sets or adjusts the intervals at which sensor data is read or updates are sent to healthcare providers, customizable to patient needs and condition severity.
-- transfer data - initiates the transfer of patient data from sensors to the central system for analysis, or between healthcare systems, for comprehensive patient care management.
+- upload data - sets or adjusts the intervals at which sensor data is read or updates are sent to healthcare providers, customizable to patient needs and condition severity.
+- read data - initiates the transfer of patient data from sensors to the central system for analysis, or between healthcare systems, for comprehensive patient care management.
+- update data - initiates the transfer of patient data from sensors to the central system for analysis, or between healthcare systems, for comprehensive patient care management.
+- initiate payment - initiates the transfer of patient data from sensors to the central system for analysis, or between healthcare systems, for comprehensive patient care management.
+- create invioice - initiates the transfer of patient data from sensors to the central system for analysis, or between healthcare systems, for comprehensive patient care management.
+- generate analytics - initiates the transfer of patient data from sensors to the central system for analysis, or between healthcare systems, for comprehensive patient care management.
 
-<img src="images/4.png" />
+
+<img src="img/Event Storming 1.png" />
 
 ## 5. Grouping events
 Events were grouped according to functionality or business processes, e.g., patient registration, data monitoring, and health status analysis. This grouping helped us understand the system's modular nature and facilitated the design of bounded context.
