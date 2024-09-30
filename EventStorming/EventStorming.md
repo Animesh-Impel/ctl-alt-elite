@@ -57,82 +57,43 @@ This phase defined the actors and commands necessary for user interaction with t
 - generate analytics - initiates the transfer of patient data from sensors to the central system for analysis, or between healthcare systems, for comprehensive patient care management.
 
 
-<img src="img/Event Storming 1.png" />
+<img src="img/Event Storming 2.png" />
 
-## 5. Grouping events
+## 3. Grouping events
 Events were grouped according to functionality or business processes, e.g., patient registration, data monitoring, and health status analysis. This grouping helped us understand the system's modular nature and facilitated the design of bounded context.
 
 In this phase, bounded contexts:
 1. Account
-- manages the enrollment of new patients into the system.
-- collects initial health data and sets up patient profiles.
+- manages candidates,employers,admin
+- set their roles.
+- Store their  profile data
+- Hold company details
 
-2. Gateway
-- serves as the bridge for data transmission between patient sensors/devices and the system's server.
-- ensures secure and efficient data flow.
+2. Resume Processing
+- Parse resume
+- Send to AI Module
+- Anonimaize data
+- Ensure secure profile data
+- ensure redily available for report and analysis
 
-3. Recorder
-- logs and stores incoming raw sensor data from patients.
-- maintains data integrity and ensures it is readily accessible for analysis.
+3. Job Matching
+- Find matching jobs for candidates
+- Find matching candidate for employer
 
-4. Analyzer
-- processes and analyzes recorded data to detect health trends and anomalies.
-- provides insights into patient health status.
+4. Report
+- Process and show candidates, Employer details
+- Fetch and Show resume data
 
-5. Monitor
-- continuously oversees patient data to ensure it remains within safe health parameters.
-- identifies critical conditions that require immediate attention.
+5. Hiring
+- Hire Candidates
+- Mark candidates hiring
+- Mark Job status
 
-6. Alert
-- generates and sends alerts and notifications to nurse monitors or mobile devices based on analysis results.
-- ensures timely intervention by medical staff in response to patient health changes.
+6. Batch process
+- Fet job data in a specific time interval
+<img src="img/Event Storming 4.png" />
 
-<img src="img/Event Storming 1.png" />
-
-## 6. Adding policy
-The final step was adding a policy for event and data management, which outlined how the system should respond to different scenarios. This policy included data retention rules, procedures for detecting anomalies in patient data, and communication protocols for critical situations.
-- retention policy 24h - [ADR-004](/ADR/ADR-004-data-retention-policy.md) 
-- alert created based on custom rules - based on requirements 
-- data are seen on screen in average 1s - based on requirements
-
-
-Detailed info:
-<img src="images/6.1.png" />
 
 # Summary:
 
-During the design of the "Monitor Me" system, we created an ADR (Architectural Decision Record), documenting key architectural decisions made in the project. An ADR is not only a way to record the rationale behind decisions but also a tool to support future maintenance and development of the system.
 
-By applying the Event Storming methodology, we can effectively define appropriate bounded contexts within our software architecture. Patient Registration, Sensors, Recorder, Analyzer, Monitor, and Alert represent distinct bounded contexts, each responsible for a specific business aspect of the system. This approach allows us to delineate and address the unique concerns associated with each context, facilitating a more organized and modular system design.
-
-Available Bounded Contexts:
-
-- **Patient Registration:** - manages the business process of registering patients and assigning them to the appropriate sensors.
-
-- **Sensors:** - handles the responsibility of collecting vital signs and life activity data from patients.
- 
-- **Recorder:** - ensures the reception and secure storage of sensor data, preventing any loss or misplacement.
- 
-- **Monitor:** - displays monitored data for medical personnel, providing real-time insights into patient status.
- 
-- **Analyzer:** - responsible for analyzing data and detecting anomalies based on predefined rules.
- 
-- **Alert:** - manages the sending and delivery of notifications to the relevant systems based on identified issues.
-
-<img src="images/7.png" />
-
-Based on the requirements and responses from the email, the following steps have been taken:
-1. **Patient Registration:** - is part of Monitor Me, but based on the client's response, we consider it as a supporting sub-domain. It will be a part of the system, but we won't be focusing on it." [ADR-005](/ADR/ADR-005-patient-registration-out-of-scope.md).
-2. **Sensors:** - Also identified as a system component to be designed outside the scope of this solution, as outlined in [ADR-006](/ADR/ADR-006-sensor-out-of-scope.md).
-
-Within the scope of this solution, the following contexts have been established: Recorder, Analyzer, Monitor, and Alert.
-
-<img src="images/7.1.png" />
-
-Transitioning from business contexts to component naming, it was realized that the term "Monitor" wasn't a suitable technical name for the responsibilities of this component. After careful consideration, we decided on a more fitting name: "Streamer." This decision was formalized in [ADR-007](/ADR/ADR-007-component-naming.md) , determining it as a more accurate name. To provide a clearer understanding of each component's business significance, the prefix "Vital Sign" was added. Consequently, the final set of components comprises:
- - Vital Sign Recorder,
- - Vital Sign Analyzer,
- - Vital Sign Streamer,
- - Vital Sign Alert. 
-
-<img src="images/components.png" />
