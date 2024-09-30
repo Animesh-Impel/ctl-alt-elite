@@ -1,6 +1,6 @@
 
 
-# ADR-008: Event-Driven Architecture
+# ADR-01: Event-Driven Architecture
 
 ## Date:
 2024-09-29
