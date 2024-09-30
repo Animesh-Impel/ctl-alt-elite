@@ -84,7 +84,7 @@ The next phase involved grouping events based on their functionality or business
 ### 7. **Feedback Management**:
 - Manages candidate and employer surveys on system performance.
  
-<img src="Event Storming 4.png" alt="Event Storming 4"/>
+<img src="Event Storming 3.png" alt="Event Storming 4"/>
  
 ## Conclusion:
 The event storming process for the "Clearview" project facilitated a deep understanding of the system’s requirements, user roles, and event flows. By clearly defining events, actors, commands, and bounded contexts, we established a robust foundation for developing a transparent and efficient hiring platform, addressing both technical and business challenges
