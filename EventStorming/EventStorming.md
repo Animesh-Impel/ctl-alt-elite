@@ -44,17 +44,17 @@ This phase defined the actors and commands necessary for user interaction with t
 
 
 **user role**:
-- candidate - frontline healthcare providers responsible for the setup of patient monitoring devices, ongoing monitoring, and responding to system-generated alerts and notifications.
-- employer - healthcare providers, including doctors and specialists, use the system for detailed analysis of patient health data and create snapshot data.
-- admin - healthcare providers, including doctors and specialists, use the system for detailed analysis of patient health data and create snapshot data.
+- candidate - A job seeker is responsible for registering their profile, uploading their resume, and applying for suitable jobs.
+- employer - An employer, including company recruiters and HR personnel, is responsible for registering the company, providing necessary information, and managing matching profiles after payment.
+- admin - A person overseeing the Clearview system is responsible for generating reports and accessing analytics data.
 
 **commands**:
-- upload data - sets or adjusts the intervals at which sensor data is read or updates are sent to healthcare providers, customizable to patient needs and condition severity.
-- read data - initiates the transfer of patient data from sensors to the central system for analysis, or between healthcare systems, for comprehensive patient care management.
-- update data - initiates the transfer of patient data from sensors to the central system for analysis, or between healthcare systems, for comprehensive patient care management.
-- initiate payment - initiates the transfer of patient data from sensors to the central system for analysis, or between healthcare systems, for comprehensive patient care management.
-- create invioice - initiates the transfer of patient data from sensors to the central system for analysis, or between healthcare systems, for comprehensive patient care management.
-- generate analytics - initiates the transfer of patient data from sensors to the central system for analysis, or between healthcare systems, for comprehensive patient care management.
+- upload data - upload resumes data in a word / pdf format.
+- read data - read resume and process data to further job matching
+- update data - update resume data and job data
+- initiate payment - payment initiated by employer for seing match profiles 
+- create invioice - payment invoice creation
+- generate analytics - generate data for report and anlaytics
 
 
 <img src="img/Event Storming 2.png" />
