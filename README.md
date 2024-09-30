@@ -405,12 +405,17 @@ Each microservice operates within its defined bounded context, ensuring a clear 
 ### Identify bounded context and aggregates
 ## Context
 ### Complete Overview
+![Overview](/C4Diagram/img/ClearViewC4%20diagramOverview.png)
 ### Context Diagram
+![Context](/C4Diagram/img/ClearView-Context%20diagram.png)
 ## Containers
+![Containers](/C4Diagram/img/ClearView-Context%20diagram.png)
 ## Components
+![Containers](/ClearViewC4ComponentDiagram.png)
 ### API Application
-#### Workflow
-## Code
+![Containers](/C4Diagram/img/ClearViewC4AIModel.jpeg)
+
+
 ## Deployment
 
 ![AWS Infrastructure Architecture](/Diagrams/aws-infra-architecture.png)
