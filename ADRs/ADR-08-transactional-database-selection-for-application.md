@@ -39,8 +39,6 @@ For hyper scalablity following are good options
 
 We are not considering Oracle or SQL Server due to properiery database.
 
-![Architecture Characteristics](/Diagrams/relational-database-comparision.webp)
-
 ## Conclusion
 
 Based on our analysis, we have decided to use PostgreSQL as the preferred database management system for our upcoming project. This decision has been made after careful consideration, and we believe that it will help us achieve our project goals efficiently and effectively.
