@@ -1,5 +1,8 @@
+Here's a rephrased version of your ADR:
 
-# ADR-008: Event Driven
+---
+
+# ADR-008: Event-Driven Architecture
 
 ## Date:
 2024-09-29
@@ -8,28 +11,30 @@
 Accepted
 
 ## Context:
-The ClearView platform must process candidate actions such as uploadresumes, updating resumes, search jobs, and finding tips. These actions must be handled in near real-time to ensure efficiency and provide a seamless user experience.
-The ClearView platform must process employer actions such as finding candidates, updating resumes, search jobs, and finding tips. These actions must be handled in near real-time to ensure efficiency and provide a seamless user experience.
+The ClearView platform must efficiently process candidate actions like uploading resumes, updating profiles, searching for jobs, and accessing career tips. These tasks must be handled in near real-time to ensure a smooth and efficient user experience. Similarly, the platform must also handle employer actions, such as searching for candidates, updating job postings, and exploring tips, with the same real-time responsiveness to meet business demands.
 
 ## Decision:
-We will adopt an Event-Driven Architecture (EDA) to decouple the services and enable real-time communication across the services and components.
-### Drivers
-- Scalability: The platform needs to handle an increasing volume of candidates,employers,resumes, jobs, and jobmatching.
-- Decoupling: Services like Job, resume , jobmatching should operate independently to allow for easier updates and better fault tolerance.
-- Real-Time Processing: Candidates and employers expect immediate result after their actions.
-### Scenarios
-- When a candidate upload resume, the  application generates an event (e.g., resumeuploadevent) with file details.
-- This event is published to an event broker  where other components ( e.g., resume parser,jobmatcher) can listen and react accordingly.
-- After the resumeuploadevent is processed, other events like ResumeParsed and storycreated can trigger subsequent services.
+We will implement an **Event-Driven Architecture (EDA)** to decouple services and facilitate real-time communication across the platform's services and components.
+
+### Drivers:
+- **Scalability**: The platform needs to support growing volumes of candidates, employers, resumes, jobs, and job matching requests.
+- **Decoupling**: Services like job management, resume processing, and job matching should function independently, enabling easier updates and enhanced fault tolerance.
+- **Real-Time Processing**: Both candidates and employers expect immediate responses after performing actions on the platform.
+
+### Scenarios:
+- When a candidate uploads a resume, the application generates an event (e.g., `ResumeUploadedEvent`) with the file details.
+- This event is published to an event broker, where other components (e.g., Resume Parser, Job Matcher) subscribe to and process the event accordingly.
+- After the `ResumeUploadedEvent` is handled, subsequent events, such as `ResumeParsed` and `StoryCreated`, can trigger further processing by related services.
 
 ## Consequences:
-### PROS:
-- Scalability: Services can scale independently, accommodating fluctuating loads without impacting other services.
-- Loose Coupling: Microservices are decoupled, allowing for independent development and deployment.
-- Improved Responsiveness: User interactions can be processed in real time, enhancing user experience.
-- Enhanced Fault Tolerance: Systems can continue to operate even when some services are temporarily unavailable.
+
+### Pros:
+- **Scalability**: Individual services can scale independently, handling varying loads without impacting others.
+- **Loose Coupling**: Microservices are decoupled, allowing for independent development, updates, and deployments.
+- **Improved Responsiveness**: User actions are processed in near real-time, improving the overall user experience.
+- **Enhanced Fault Tolerance**: The system can continue functioning even if some services experience temporary downtime.
 
 ### Cons:
-- Increased Complexity: The system architecture becomes more complex, necessitating robust monitoring and logging solutions.
-- Eventual Consistency: Data may not be immediately consistent across services, requiring careful handling of business processes.
-- Learning Curve: Development teams may need training on EDA principles and tools.
+- **Increased Complexity**: The overall system becomes more complex, requiring robust monitoring and logging infrastructure.
+- **Eventual Consistency**: Data consistency across services may not be immediate, requiring careful management of business processes.
+- **Learning Curve**: Development teams may need training to fully understand and utilize EDA principles and tools effectively.
