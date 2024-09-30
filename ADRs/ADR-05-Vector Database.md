@@ -1,4 +1,4 @@
-# ADR 012: Use of Vector Database
+# ADR 05: Use of Vector Database
 
 ## Date:
 2014-09-30
