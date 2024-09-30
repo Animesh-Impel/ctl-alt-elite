@@ -409,11 +409,11 @@ Each microservice operates within its defined bounded context, ensuring a clear 
 ### Context Diagram
 ![Context](/C4Diagram/img/ClearView-Context%20diagram.png)
 ## Containers
-![Containers](/C4Diagram/img/ClearView-Context%20diagram.png)
+![Containers](/C4Diagram/img/ClearViewC4%20diagramCS.jpeg)
 ## Components
-![Containers](/ClearViewC4ComponentDiagram.png)
+![Components](C4Diagram/img/ClearViewC4ComponentDiagram.png)
 ### API Application
-![Containers](/C4Diagram/img/ClearViewC4AIModel.jpeg)
+![API Application](/C4Diagram/img/ClearViewC4AIModel.jpeg)
 
 
 ## Deployment
