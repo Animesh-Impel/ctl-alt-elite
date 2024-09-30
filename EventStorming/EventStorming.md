@@ -1,7 +1,4 @@
-# Architectural Decision Record (ADR): Event Storming for "Clearview" Project
- 
-## Context and Problem Statement:
-The "Clearview" project aims to develop a transparent and advanced hiring platform. To ensure that the system meets actual business needs and aligns with user workflows, we utilized the **Event Storming** methodology. This document outlines the phases of event storming employed in the design and development process, with a focus on the technical architecture and challenges encountered.
+# Event Storming
  
 ## 1. Event Identification and Sequencing:
 The first phase involved identifying critical events in the "Clearview" system. These events were arranged in a chronological sequence to understand the flow of data and interactions across the platform. By establishing temporal dependencies between events, the team gained clarity on how each event impacts system operations, enhancing the overall user experience. The following key events were identified:
