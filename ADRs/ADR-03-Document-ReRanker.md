@@ -1,4 +1,4 @@
-# ADR 014: Re-Ranking the matched documents for resume feedback and job matching.
+# ADR 03: Re-Ranking the matched documents for resume feedback and job matching.
 
 ## Date:
 2024-09-16
