@@ -175,42 +175,253 @@ Based on the architecture charetrisctis we prefer to use the microservices based
  ##### [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=104%3A8587&node-id=239-4832&node-type=canvas&viewport=1322%2C534%2C0.5&t=Fyp3n978SR87r8wR-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=239%3A4832)
 
 
-## Event Storming
+## Exploring components
 
-Event storming drives greater understanding and productivity by simplifying the approach and including multiple levels of stakeholders in the business. With the help of sticky notes and a willing group, you can reveal your business processes more efficiently and enjoyably.
+We conducted an Event Storming technique to identify the main components of the Clearview system. This collaborative workshop helped us visualize system workflows, identify domain events, and determine the interactions between components. Through this process, we [identified the necessary components and their relationships](EventStorming/EventStorming.md), informing the design and implementation of the system. Here are the results:
+
+<img src="EventStorming/Event Storming 4.png" />
+
+---
+
+## 1. Account-Service
+
+**Bounded Context:** User & Role
+
+### **Description**
+The **Account-Service** is the cornerstone for managing user identities and roles within the system. It oversees the creation, authentication, authorization, and maintenance of user profiles for different user types, including candidates, employers, and administrators.
+
+### **Key Features**
+- **User Management**
+  - **Registration & Onboarding:** Facilitates user sign-up processes for candidates, employers, and admins.
+  - **Profile Management:** Allows users to create, update, and delete their profiles with relevant information.
+  - **Password Management:** Handles password creation, resets, and recovery mechanisms securely.
+
+- **Role Management**
+  - **Role Assignment:** Assigns specific roles (e.g., candidate, employer, admin) to users based on their type and permissions.
+  - **Permission Control:** Defines and manages access levels for different roles to ensure appropriate access to system functionalities.
+
+- **Authentication & Authorization**
+  - **Secure Login:** Implements secure authentication protocols (e.g., OAuth, JWT) for user login.
+  - **Session Management:** Manages user sessions to maintain security and user experience.
+  - **Access Control:** Enforces authorization rules to restrict access to sensitive operations and data.
+
+- **Security**
+  - **Data Encryption:** Ensures that sensitive user data is encrypted both at rest and in transit.
+  - **Compliance:** Adheres to data protection regulations such as GDPR and CCPA to protect user privacy.
+
+- **Audit & Logging**
+  - **Activity Logs:** Maintains logs of user activities for auditing and monitoring purposes.
+  - **Security Audits:** Regularly audits security measures to identify and mitigate potential vulnerabilities.
+
+---
+
+## 2. Resume-Service
+
+**Bounded Context:** Resume Processing
+
+### **Description**
+The **Resume-Service** is dedicated to handling all aspects of resume management. It processes resumes submitted by candidates, ensuring that data is parsed accurately, anonymized for privacy, and securely stored.
+
+### **Key Features**
+- **Resume Parsing**
+  - **Format Support:** Parses resumes in various formats such as PDF, DOCX, and plain text.
+  - **Data Extraction:** Extracts structured data like personal information, education, work experience, and skills.
+
+- **Data Anonymization**
+  - **Privacy Protection:** Removes or masks personally identifiable information (PII) to maintain candidate confidentiality.
+  - **Customizable Anonymization Rules:** Allows configuration of which data fields to anonymize based on compliance requirements.
+
+- **Secure Storage**
+  - **Encrypted Storage:** Stores resumes in encrypted databases to prevent unauthorized access.
+  - **Backup & Recovery:** Implements robust backup strategies to ensure data integrity and availability.
+
+- **Resume Validation**
+  - **Format Verification:** Ensures that resumes adhere to the required formats and standards.
+  - **Content Validation:** Checks for completeness and relevance of the information provided.
+
+- **Integration APIs**
+  - **Data Accessibility:** Provides APIs for other services (e.g., Job-Matcher-Service) to access and utilize resume data securely.
+  - **Real-time Updates:** Ensures that any changes in resume data are propagated in real-time to dependent services.
+
+- **Version Control**
+  - **Resume History:** Maintains versions of resumes to track changes over time.
+  - **Rollback Mechanism:** Allows reverting to previous versions if necessary.
+
+---
+
+## 3. Job-Service
+
+**Bounded Context:** Job Scheduler
+
+### **Description**
+The **Job-Service** manages the scheduling and fetching of job-related tasks within the system. It ensures that job postings are created, updated, deleted, and retrieved efficiently to facilitate seamless interactions between employers and candidates.
+
+### **Key Features**
+- **Job Scheduling**
+  - **Automated Posting:** Schedules job postings based on predefined criteria and timelines.
+  - **Recurring Jobs:** Supports recurring job postings for positions that require ongoing recruitment.
+
+- **Job Management**
+  - **Create & Edit Jobs:** Allows employers to create new job postings and edit existing ones with detailed descriptions, requirements, and benefits.
+  - **Delete Jobs:** Enables employers to remove job postings that are no longer relevant or have been filled.
+
+- **Job Retrieval**
+  - **Search & Filter:** Provides robust search and filtering capabilities to help users find relevant job postings.
+  - **Pagination & Sorting:** Supports efficient data retrieval with pagination and sorting options for large datasets.
+
+- **Integration with Other Services**
+  - **Job-Matcher Integration:** Interfaces with the Job-Matcher-Service to provide up-to-date job postings for matching candidates.
+  - **Notification Triggers:** Works with the Survey-Service to notify users about job-related updates and surveys.
+
+- **Job Analytics**
+  - **Performance Metrics:** Tracks metrics such as the number of views, applications, and engagement rates for each job posting.
+  - **Reporting Tools:** Provides data for generating reports on job posting effectiveness and trends.
+
+- **Compliance & Standards**
+  - **Regulatory Compliance:** Ensures that job postings comply with labor laws and industry standards.
+  - **Content Moderation:** Implements checks to prevent inappropriate or non-compliant job descriptions.
+
+---
+
+## 4. Job-Matcher-Service
+
+**Bounded Context:** Job Matching
+
+### **Description**
+The **Job-Matcher-Service** is the core component responsible for pairing candidates with suitable job opportunities. It utilizes advanced algorithms and data analytics to ensure optimal matches based on various criteria and preferences.
+
+### **Key Features**
+- **Matching Algorithms**
+  - **Skill-Based Matching:** Aligns candidate skills with job requirements to find the best fits.
+  - **Preference Matching:** Considers candidate and employer preferences, such as location, salary, and job type.
+
+- **Real-Time Matching**
+  - **Instant Recommendations:** Provides real-time job recommendations to candidates as they interact with the platform.
+  - **Dynamic Updates:** Continuously updates matches based on new data and changing user profiles.
+
+- **Machine Learning Integration**
+  - **Predictive Analytics:** Utilizes machine learning models to predict the likelihood of successful job placements.
+  - **Continuous Learning:** Enhances matching accuracy by learning from past interactions and feedback.
+
+- **Personalization**
+  - **Customized Suggestions:** Tailors job recommendations based on individual user behavior and history.
+  - **User Feedback Integration:** Incorporates user feedback to refine and improve matching results.
+
+- **Scalability**
+  - **High Throughput:** Handles large volumes of matching requests efficiently, ensuring minimal latency.
+  - **Elastic Scaling:** Adapts to varying workloads to maintain performance during peak times.
+
+- **Integration with Other Services**
+  - **Resume-Service Integration:** Accesses parsed and anonymized resume data to inform matching decisions.
+  - **Job-Service Integration:** Retrieves up-to-date job postings to ensure accurate and relevant matches.
+
+- **Reporting & Analytics**
+  - **Match Success Rates:** Tracks and reports on the effectiveness of matches made.
+  - **User Engagement Metrics:** Analyzes how users interact with the matching recommendations to improve service quality.
+
+---
+
+## 5. Survey-Service
+
+**Bounded Context:** Feedback
+
+### **Description**
+The **Survey-Service** manages the collection and analysis of feedback and survey data from both candidates and employers. It ensures that interactions within the system are smooth and that user experiences are continuously improved based on collected insights.
+
+### **Key Features**
+- **Feedback Collection**
+  - **Post-Interaction Surveys:** Sends surveys to users after key interactions, such as job applications or interviews.
+  - **Continuous Feedback Loops:** Allows users to provide ongoing feedback about their experiences.
+
+- **Survey Management**
+  - **Survey Creation & Customization:** Enables administrators to create and customize surveys to gather specific information.
+  - **Template Library:** Provides a library of pre-built survey templates for common feedback scenarios.
+
+- **Data Analysis**
+  - **Sentiment Analysis:** Analyzes feedback to gauge user sentiment and satisfaction levels.
+  - **Trend Identification:** Identifies trends and patterns in user feedback to inform system improvements.
+
+- **Reporting**
+  - **Dashboards:** Offers dashboards that display key metrics and insights derived from survey data.
+  - **Exportable Reports:** Allows exporting of survey results and analysis for further examination or reporting purposes.
+
+- **Integration with Other Services**
+  - **Notification Systems:** Works with the Account-Service and Job-Service to trigger surveys based on user actions.
+  - **Feedback-Driven Improvements:** Collaborates with other services to implement changes based on collected feedback.
+
+- **User Engagement**
+  - **Incentivization:** Provides incentives for users to participate in surveys, such as rewards or recognition.
+  - **Responsive Design:** Ensures surveys are accessible and user-friendly across various devices and platforms.
+
+- **Security & Privacy**
+  - **Data Protection:** Ensures that all feedback data is stored securely and complies with privacy regulations.
+  - **Anonymization Options:** Allows users to submit feedback anonymously if desired.
+
+---
+
+## 6. Report-Service
+
+**Bounded Context:** Analytics/Reports
+
+### **Description**
+The **Report-Service** is responsible for generating comprehensive analytics and reports that provide valuable insights into system performance, user behavior, and operational metrics. It serves administrators and users by offering data-driven information to support decision-making.
+
+### **Key Features**
+- **Data Aggregation**
+  - **Centralized Data Collection:** Aggregates data from all microservices to provide a unified view of system operations.
+  - **ETL Processes:** Utilizes Extract, Transform, Load (ETL) processes to prepare data for analysis.
+
+- **Analytics Engine**
+  - **Real-Time Analytics:** Processes data in real-time to deliver up-to-date insights and metrics.
+  - **Historical Data Analysis:** Analyzes historical data to identify trends and patterns over time.
+
+- **Reporting Tools**
+  - **Custom Report Builder:** Allows users to create custom reports tailored to their specific needs.
+  - **Predefined Reports:** Offers a set of predefined reports covering common analytical requirements.
+
+- **Visualization**
+  - **Dashboards:** Provides interactive dashboards with visual representations of key metrics and KPIs.
+  - **Charts & Graphs:** Utilizes various chart types (e.g., bar, line, pie) to illustrate data effectively.
+
+- **User Access & Permissions**
+  - **Role-Based Access:** Ensures that only authorized users can access certain reports and data.
+  - **Data Security:** Protects sensitive information through robust security measures.
+
+- **Integration with Other Services**
+  - **Real-Time Data Feeds:** Receives real-time data from other microservices to ensure reports are current.
+  - **API Access:** Offers APIs for external systems to retrieve report data programmatically.
+
+- **Export & Sharing**
+  - **Multiple Formats:** Supports exporting reports in formats such as PDF, Excel, and CSV.
+  - **Sharing Capabilities:** Allows users to share reports with team members or stakeholders easily.
+
+- **Performance Monitoring**
+  - **System Health Reports:** Generates reports on the health and performance of the overall system.
+  - **Usage Metrics:** Tracks how different services are being utilized to identify areas for optimization.
+
+- **Compliance Reporting**
+  - **Regulatory Compliance:** Produces reports required for compliance with industry regulations and standards.
+  - **Audit Trails:** Maintains detailed logs and reports for auditing purposes.
+
+---
+
+Each microservice operates within its defined bounded context, ensuring a clear separation of concerns. This modular approach enhances the system's maintainability, scalability, and overall performance, allowing each service to evolve independently while contributing to the cohesive functionality of the entire platform.
+
+
+
 
 ### Identify domain events
-
-
 ### Connect domain events to commands
-
-
 ### Identify bounded context and aggregates
-
-
-
 ## Context
 ### Complete Overview
-
 ### Context Diagram
-
 ## Containers
-
 ## Components
 ### API Application
-
-
-
 #### Workflow
-
-
-
-
 ## Code
-
-
 ## Deployment
-
 
 ![AWS Infrastructure Architecture](/Diagrams/aws-infra-architecture.png)
 *Figure:* AWS Infrastructure Architecture  
