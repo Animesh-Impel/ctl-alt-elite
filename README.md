@@ -179,7 +179,7 @@ Based on the architecture charetrisctis we prefer to use the microservices based
 
 We conducted an Event Storming technique to identify the main components of the Clearview system. This collaborative workshop helped us visualize system workflows, identify domain events, and determine the interactions between components. Through this process, we [identified the necessary components and their relationships](EventStorming/EventStorming.md), informing the design and implementation of the system. Here are the results:
 
-<img src="EventStorming/Event Storming 4.png" />
+<img src="EventStorming/images/components.png" />
 
 ---
 
