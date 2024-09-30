@@ -8,7 +8,7 @@
 Accepted
 
 ## Context:
-Clearview Systems aims to enhance real-time data processing and improve responsiveness across its platform.
+Clearview Systems aims to enhance real-time data processing and improve responsiveness across its platform. Modules like Resume processing, Module re-training and report generation are event drive in nature.
 
 ## Decision:
 Adopt an Event-Driven Architecture (EDA) to facilitate asynchronous communication between microservices, enabling greater scalability and responsiveness in Clearview Systems.
