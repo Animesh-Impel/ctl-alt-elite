@@ -154,8 +154,8 @@ Based on the architecture charetrisctis we prefer to use the microservices based
 #### Candidate 
 - ![Register](/UXDesigns/Candidate/Candidate Register.png)
 - ![Dashboard](/UXDesigns/Candidate/Dashboard- Candidate.png)
-- ![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
-- ![Figma Walkthroug](https://xd.adobe.com/view/2771a735-f300-447d-b192-2e5f9d16369f-7222/?fullscreen](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=0%3A1&node-id=2-2&node-type=canvas&viewport=538%2C192%2C0.13&t=8IGLuCUeOYYQIMy2-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2%3A2)
+- ![Logo](https://xd.adobe.com/view/2771a735-f300-447d-b192-2e5f9d16369f-7222/?fullscreen](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=0%3A1&node-id=2-2&node-type=canvas&viewport=538%2C192%2C0.13&t=8IGLuCUeOYYQIMy2-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2%3A2)
+- ![Figma Walkthroug]()
 #### Employer  
 #### Admin 
  #### More designs
