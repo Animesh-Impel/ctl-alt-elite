@@ -160,19 +160,19 @@ Based on the architecture charetrisctis we prefer to use the microservices based
   
 #### Employer  
 ##### Register
- ![Register](UXDesigns/Candidate/EmployerRegister.png)
+ ![Register](UXDesigns/Employer/EmployerRegister.png)
  
  ##### Dashboard
- ![Dashboard](UXDesigns/Candidate/EmployerDashboard.png)
+ ![Dashboard](UXDesigns/Employer/EmployerDashboard.png)
 
  ##### [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=104%3A8588&node-id=239-5113&node-type=frame&viewport=2015%2C545%2C0.5&t=AQYBmgaBM6dlXAo0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=239%3A5113)
 
 #### Admin 
 ##### Register
- ![Register](UXDesigns/Candidate/AdminLogin.png)
+ ![Register](UXDesigns/Admin/AdminLogin.png)
  
  ##### Dashboard
- ![Dashboard](UXDesigns/Candidate/AdminDashboard.png)
+ ![Dashboard](UXDesigns/Admin/AdminDashboard.png)
 
  ##### [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=104%3A8587&node-id=239-4832&node-type=canvas&viewport=1322%2C534%2C0.5&t=Fyp3n978SR87r8wR-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=239%3A4832)
 
