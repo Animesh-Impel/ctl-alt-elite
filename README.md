@@ -14,7 +14,6 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
 - [Requirements](#requirements)
     - [Business Requirments](#business-requirments)  
     - [Technical Requirements](#technical-requirements)
-    - [Market Research](#market-research)
     - [Other Considerations](#other-considerations)
 - [Architecture Characteristics](#architecture-characteristics) 
     - [Top 3 Characteristics](#top-3-characteristics)
@@ -32,8 +31,7 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
 - [Components](#components)
     - [API Application](#api-application)
     - [Batch Process](#batch-process)
-- [Code](#code)
-    - [Trip Service](#trip-api-service)
+    - [AI Engine](#batch-process)
 - [Deployment](#deployment)
 - [ADRs](#adrs)
 
