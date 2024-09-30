@@ -19,7 +19,6 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
 - [Architecture Characteristics](#architecture-characteristics) 
     - [Top 3 Characteristics](#top-3-characteristics)
     - [Implicit Characteristics](#implicit-characteristics)
-    - [Other Characteristics](#other-characteristics)
 - [Architecture Approach](#architecture-approach)
 - [Use Journey](#use-journey)
     - [User experience (UX) design](#user-experience-ux-design)
@@ -95,50 +94,40 @@ To ensure a successful system implementation, it's vital to prioritize key archi
 
 
 *Figure: Architecture Characteristics*
+![Architecture Characteristics](/Images/Architecture_Characteristics_Worksheet.png)
 
 ## Top 3 Characteristics
-### Scalability
- Scalability allows the system to accommodate a growing user base and increased data volume, ensuring that Road Warrior can scale its services as it gains more users.
-### Performance
- Performance optimization is critical to meet the specified response times and deliver real-time travel updates quickly and efficiently.
-### Availability
-"99.99% uptime" is a High availability, with a maximum of 5 minutes per month of unplanned downtime, is essential to ensure travelers can access their reservations and updates reliably.
+The key architectural characteristics of the recruitment system that leverages AI LLM for resume recommendations, candidate scoring, and job matching, while integrating with multiple HRMS systems, focus on **Scalability**, **Performance**, and **Interoperability**. Here's how these characteristics shape the system:
+
+### 1. **Scalability**
+- **Handling Growth**: The system must efficiently scale to accommodate an increasing number of candidates, resumes, and job postings as businesses expand. Scalability ensures smooth operation under fluctuating workloads, including more AI-driven analysis and HRMS integrations.
+- **AI Resource Optimization**: As the system processes more resumes and handles higher candidate scoring and job matching volumes, resources need to be dynamically managed to support seamless AI model execution, especially during peak loads.
+
+### 2. **Performance**
+- **Fast AI-Driven Results**: High computational performance is essential for AI LLM models to provide real-time resume recommendations and candidate scoring, delivering immediate feedback to users on job matches and recommendations.
+- **Efficient HRMS Data Retrieval**: The system must rapidly fetch job details and other data from multiple HRMS systems without introducing latency, ensuring job matching is prompt and system responsiveness is maintained.
+- **Enhanced User Experience**: Fast, reliable responses to user actions—such as uploading resumes or generating job matches—are crucial for delivering a smooth and efficient experience for both candidates and recruiters.
+
+### 3. **Interoperability**
+- **Seamless HRMS Integration**: The system needs to integrate effortlessly with various external HRMS platforms, regardless of their underlying technology or data formats, ensuring smooth communication and data exchange.
+- **Consistent Data Formatting**: With different HRMS systems potentially using varied data structures, interoperability ensures standardized data handling, enabling the AI models to process information accurately across platforms.
+- **Future-Proofing**: Interoperability allows the recruitment system to integrate with new HRMS platforms or technologies over time, adapting to evolving business requirements without major re-engineering efforts.
 
 ## Implicit Characteristics
 ### Feasibility (Cost/Time)
 Achieving rapid time-to-market while managing development costs is a feasible goal with the selected "mini-services" architecture.
-### Security
-Implementing strong authentication and authorization mechanisms is vital to safeguard traveler information and data integrity. Also storing the PII data like trip information needs to be protected and handle properly due to compliance like GDPR. 
-Token-based authentication (JWT) and role-based access control (RBAC) must safeguard all API access. Additional considerations encompass encrypting data at rest and during transmission, ensuring secure credential management, effectively managing sessions, implementing refresh tokens for applications, and integrating IAM for enhanced security.
 ### Maintainability
 Ensuring clean code, documentation, and knowledge sharing within the development team are essential for long-term system maintainability.
 ### Observability
 Implementing comprehensive monitoring and observability solutions enables efficient tracking of system performance and early issue detection for proactive problem-solving.
 
-## Other Characteristics
 
 ## Architecture Approach
 ### Architecture Style
 
 *Figure: Architecture Style*
+![Architecture Style](/Images/Architecture_Styles_Worksheet.png)
 
-Based on the architecture charetrisctis we prefer to use the microservices based style.
-
-#### Options for service granularity
-
-
-
-### Scalability
-
-- **Granular Scaling**: Mini-services allow for granular scaling of specific parts of the application to meet varying workloads efficiently.
-- **Resource Efficiency**: Scalability ensures optimal resource usage, preventing over-provisioning and reducing operational costs.
-- **Seamless Growth**: The architecture facilitates the seamless growth of the system as user numbers and data volume increase over time.
-
-### Availability
-
-- **Independent Deployment**: The architecture's emphasis on independent deployment contributes to high availability. If one mini-service experiences issues or requires maintenance, it does not necessarily impact the availability of other services.
-- **Cluster setup with DR Plan**: All components must be capable of operating in cluster mode and accommodating horizontal scalability. Additionally, the application should be deployable in various regions to address Disaster Recovery (DR) and Business Continuity Planning (BCP) requirements, ensuring compliance with a 99.99% Service Level Agreement (SLA).
-- **Robust Testing and CI/CD**: The inclusion of robust testing and CI/CD practices ensures that new updates can be quickly and reliably deployed, minimizing the likelihood of extended downtime.
 
 ### Performance
 
