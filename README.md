@@ -1,5 +1,6 @@
 # Ctrl+Alt+Elite - O'Reilly Architectural Katas: Fall 2024
 
+![Ctrl+Alt+Elite](/Images/Header.jpg)
 
 Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are here to present our solution for the O'Reilly Architectural Katas: Fall 2024.
 
