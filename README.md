@@ -148,10 +148,10 @@ Implementing comprehensive monitoring and observability solutions enables effici
   
 #### Employer  
 ##### Register
- ![Register](UXDesigns/Employer/EmployerRegister.png)
+ ![Register](UXDesigns/Employer/Employer-Register.jpg)
  
  ##### Dashboard
- ![Dashboard](UXDesigns/Employer/EmployerDashboard.png)
+ ![Dashboard](UXDesigns/Employer/EmployerDashboard.jpg)
 
  ##### [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=104%3A8588&node-id=239-5113&node-type=frame&viewport=2015%2C545%2C0.5&t=AQYBmgaBM6dlXAo0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=239%3A5113)
 
