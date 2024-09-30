@@ -418,7 +418,7 @@ Each microservice operates within its defined bounded context, ensuring a clear 
 
 ## Deployment
 
-![AWS Infrastructure Architecture](/Diagrams/aws-infra-architecture.png)
+![AWS Infrastructure Architecture](/Images/ClearViewInfraDiagram.png)
 *Figure:* AWS Infrastructure Architecture  
 #### Regions 
  Regions are geographic areas that contain data centers. Also helps to enable DR/BCP.  
