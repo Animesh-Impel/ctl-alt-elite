@@ -91,6 +91,11 @@ In this phase, bounded contexts:
 
 6. Batch process
 - Fet job data in a specific time interval
+
+7. Feedback
+- survey for candidates
+- survey for employer
+  
 <img src="img/Event Storming 4.png" />
 
 
