@@ -72,10 +72,7 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
 - **US-18:** Response time from web (800ms) and mobile (First-contentful paint of under 1.4 sec)
 
 ## Assumptions
-
-## Market Research
-
-### Market Scope
+- Assume a trained LLM for purposes of the solution
 
 
 
@@ -152,8 +149,8 @@ Based on the architecture charetrisctis we prefer to use the microservices based
 
 ### User experience (UX) design
 #### Candidate 
-- ![Register] (/UXDesigns/Candidate/Candidate Register.png)
-- ![Dashboard] (/UXDesigns/Candidate/Dashboard- Candidate.png)
+- [Register](UXDesigns/Candidate/Candidate Register.png)
+- [Dashboard](UXDesigns/Candidate/Dashboard- Candidate.png)
 - [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=0%3A1&node-id=2-2&node-type=canvas&viewport=538%2C192%2C0.13&t=8IGLuCUeOYYQIMy2-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2%3A2)
 - 
 #### Employer  
