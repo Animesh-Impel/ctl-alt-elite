@@ -34,7 +34,7 @@ The first phase involved identifying critical events in the "Clearview" system. 
 - **Analytics Data Generated**: The system generates data for reporting and recommendations.
 - **Report Generated**: Admins access various system reports.
  
-<img src="Event Storming 1.png" alt="Event Storming 1"/>
+<img src="images/Event Storming 1.png" alt="Event Storming 1"/>
  
 ## 2. Defining Actors and Commands:
 The second phase focused on identifying the system’s key actors and their associated commands. This step defined the responsibilities of each user type, as well as how they interact with the system.
@@ -52,7 +52,7 @@ The second phase focused on identifying the system’s key actors and their asso
 - **Create Invoice**: A payment invoice is generated after the employer completes the transaction.
 - **Generate Analytics**: The system generates reports and analytics for decision-making.
  
-<img src="Event Storming 2.png" alt="Event Storming 2"/>
+<img src="images/Event Storming 2.png" alt="Event Storming 2"/>
  
 ## 3. Event Grouping and Bounded Contexts:
 The next phase involved grouping events based on their functionality or business processes, helping to define the system's bounded contexts and modular architecture. The key bounded contexts identified were:
@@ -84,7 +84,7 @@ The next phase involved grouping events based on their functionality or business
 ### 7. **Feedback Management**:
 - Manages candidate and employer surveys on system performance.
  
-<img src="Event Storming 3.png" alt="Event Storming 4"/>
+<img src="images/Event Storming 3.png" alt="Event Storming 4"/>
 
 ## 4. Bounded Contexts & Components:
 Bounded contexts are crucial in defining the boundaries within which specific business functionalities and services operate. Each bounded context encapsulates a distinct part of the system, ensuring that responsibilities and processes are modular, maintainable, and independently scalable.
@@ -109,7 +109,7 @@ Bounded contexts are crucial in defining the boundaries within which specific bu
 
 Each service operates within its bounded context, promoting a clear separation of concerns and streamlining system performance across various domains.
 
-<img src="Event Storming 4.png" alt="Event Storming 4"/>
+<img src="images/Event Storming 4.png" alt="Event Storming 4"/>
  
 ## Conclusion:
 The event storming process for the "Clearview" project facilitated a deep understanding of the system’s requirements, user roles, and event flows. By clearly defining events, actors, commands, and bounded contexts, we established a robust foundation for developing a transparent and efficient hiring platform, addressing both technical and business challenges
