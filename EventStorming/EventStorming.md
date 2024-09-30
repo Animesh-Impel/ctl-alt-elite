@@ -63,7 +63,7 @@ This phase defined the actors and commands necessary for user interaction with t
 Events were grouped according to functionality or business processes, e.g., patient registration, data monitoring, and health status analysis. This grouping helped us understand the system's modular nature and facilitated the design of bounded context.
 
 In this phase, bounded contexts:
-1. Patient Registration
+1. Account
 - manages the enrollment of new patients into the system.
 - collects initial health data and sets up patient profiles.
 
@@ -87,7 +87,7 @@ In this phase, bounded contexts:
 - generates and sends alerts and notifications to nurse monitors or mobile devices based on analysis results.
 - ensures timely intervention by medical staff in response to patient health changes.
 
-<img src="images/5.png" />
+<img src="img/Event Storming 1.png" />
 
 ## 6. Adding policy
 The final step was adding a policy for event and data management, which outlined how the system should respond to different scenarios. This policy included data retention rules, procedures for detecting anomalies in patient data, and communication protocols for critical situations.
