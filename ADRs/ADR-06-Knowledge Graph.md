@@ -1,4 +1,4 @@
-# ADR 013: Use of Knowledge Graph
+# ADR 06: Use of Knowledge Graph
 
 ## Date:
 2014-09-30
