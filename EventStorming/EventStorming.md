@@ -85,6 +85,31 @@ The next phase involved grouping events based on their functionality or business
 - Manages candidate and employer surveys on system performance.
  
 <img src="Event Storming 3.png" alt="Event Storming 4"/>
+
+## 4. Bounded Contexts & Components:
+Bounded contexts are crucial in defining the boundaries within which specific business functionalities and services operate. Each bounded context encapsulates a distinct part of the system, ensuring that responsibilities and processes are modular, maintainable, and independently scalable.
+
+### 1. **User & Role -> Account-Service**:
+- Governs the user and role management, handling candidate, employer, and admin profiles.
+
+### 2. **Resume Processing -> Resume-Service**:
+- Responsible for resume processing, including parsing, anonymizing, and securing resume data.
+
+### 3. **Job Scheduler -> Job-Service**:
+- Manages job scheduling and fetching tasks.
+
+### 4. **Job Matching -> Job-Matcher-Service**:
+- Handles the core job-matching functionality, linking candidates to relevant jobs and vice versa.
+
+### 5. **Feedback -> Survey-Service**:
+- Manages the feedback collection & survey processes to ensure smooth interaction between candidates and employers regarding their system experience.
+
+### 6. **Analytics/Reports -> Report-Service**:
+- Generates analytics and reports, providing system insights for administrators and users.
+
+Each service operates within its bounded context, promoting a clear separation of concerns and streamlining system performance across various domains.
+
+<img src="Event Storming 4.png" alt="Event Storming 4"/>
  
 ## Conclusion:
 The event storming process for the "Clearview" project facilitated a deep understanding of the system’s requirements, user roles, and event flows. By clearly defining events, actors, commands, and bounded contexts, we established a robust foundation for developing a transparent and efficient hiring platform, addressing both technical and business challenges
