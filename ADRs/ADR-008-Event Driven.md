@@ -1,6 +1,4 @@
-Here's a rephrased version of your ADR:
 
----
 
 # ADR-008: Event-Driven Architecture
 
