@@ -36,7 +36,7 @@ The initial step involved gathering key events essential for the operation of th
 - **report generated**: Data that is older than 24 hours is archived for long-term storage.
 
 
-<img src="img/1.png" />
+<img src="img/Event Storming 1.png" />
 
 
 ## 2. Adding actors and commands
