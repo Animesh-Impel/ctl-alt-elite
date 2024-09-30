@@ -1,4 +1,4 @@
-# ADR 015: Anonymizing the Resume for LLM Use and Candidate Matching
+# ADR 02: Anonymizing the Resume for LLM Use and Candidate Matching
 
 ## Date:
 2024-09-16
