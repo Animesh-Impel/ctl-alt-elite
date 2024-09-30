@@ -1,4 +1,4 @@
-## Database selection for reporting
+# ADR-07 Database selection for reporting
 
 ### Status: Proposed
 
