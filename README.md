@@ -155,14 +155,27 @@ Based on the architecture charetrisctis we prefer to use the microservices based
  ##### Dashboard
  ![Dashboard](UXDesigns/Candidate/DashboardCandidate.png)
 
- ##### Figma Walkthroug
- [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=0%3A1&node-id=2-2&node-type=canvas&viewport=538%2C192%2C0.13&t=8IGLuCUeOYYQIMy2-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2%3A2)
+ ##### [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=0%3A1&node-id=2-2&node-type=canvas&viewport=538%2C192%2C0.13&t=8IGLuCUeOYYQIMy2-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2%3A2)
+
   
 #### Employer  
-#### Admin 
- #### More designs
+##### Register
+ ![Register](UXDesigns/Candidate/EmployerRegister.png)
+ 
+ ##### Dashboard
+ ![Dashboard](UXDesigns/Candidate/EmployerDashboard.png)
 
- #### Complete walkthrough
+ ##### [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=104%3A8588&node-id=239-5113&node-type=frame&viewport=2015%2C545%2C0.5&t=AQYBmgaBM6dlXAo0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=239%3A5113)
+
+#### Admin 
+##### Register
+ ![Register](UXDesigns/Candidate/AdminLogin.png)
+ 
+ ##### Dashboard
+ ![Dashboard](UXDesigns/Candidate/AdminDashboard.png)
+
+ ##### [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=104%3A8587&node-id=239-4832&node-type=canvas&viewport=1322%2C534%2C0.5&t=Fyp3n978SR87r8wR-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=239%3A4832)
+
 
 ## Event Storming
 
