@@ -18,13 +18,14 @@ The first phase involved identifying critical events in the "ClearView" system. 
 - **Job Matched**: The system matches profiles with job postings.
 - **Employer Registered**: Employers register their company on the platform.
 - **Company Details Filled**: Employers complete necessary company information.
-- **Job Posting Fetched**: Job postings are fetched from registered companies periodically.
+- **Job Posted**: Jobs are posted by the employer.
 - **Matching Profile Fetched**: The system identifies profiles that match the job criteria.
 - **Matching Profile Displayed**: Matching profiles are displayed to the employer.
 - **Profile Viewed**: Employers view limited candidate information.
 - **Employer Payment Completed**: Employers initiate payment to access full candidate details.
 - **Invoice Created**: A payment invoice is generated for reference.
 - **Profile Unlocked**: Full candidate details, including contact information, are unlocked after payment.
+- **Profile Sent To HR Systems**: Unlocked candidate profile sent to HR system.
 - **Candidate Marked as Hired**: Employers mark candidates as hired for specific roles.
 - **Candidate Marked as Not Hired**: The system updates candidates' status as "not hired."
 - **Survey Taken**: Both employers and candidates complete surveys about their experience.
@@ -95,7 +96,7 @@ Bounded contexts are crucial in defining the boundaries within which specific bu
 ### 2. **Resume Processing -> Resume-Service**:
 - Responsible for resume processing, including parsing, anonymizing, and securing resume data.
 
-### 3. **Job Scheduler -> Job-Service**:
+### 3. **Job  -> Job-Service**:
 - Manages job scheduling and fetching tasks.
 
 ### 4. **Job Matching -> Job-Matcher-Service**:
