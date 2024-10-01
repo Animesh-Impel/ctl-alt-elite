@@ -207,7 +207,7 @@ The **Account-Service** is the cornerstone for managing user identities and role
 
 ## 2. Resume-Service
 
-**Bounded Context:** Resume Processing
+**Bounded Context:** Resume Upload & Parsing
 
 ### **Description**
 The **Resume-Service** is dedicated to handling all aspects of resume management. It processes resumes submitted by candidates, ensuring that data is parsed accurately, anonymized for privacy, and securely stored.
@@ -241,7 +241,7 @@ The **Resume-Service** is dedicated to handling all aspects of resume management
 
 ## 3. Job-Service
 
-**Bounded Context:** Job Scheduler
+**Bounded Context:** Job Posting
 
 ### **Description**
 The **Job-Service** manages the scheduling and fetching of job-related tasks within the system. It ensures that job postings are created, updated, deleted, and retrieved efficiently to facilitate seamless interactions between employers and candidates.
@@ -313,7 +313,7 @@ The **Job-Matcher-Service** is the core component responsible for pairing candid
 
 ## 5. Survey-Service
 
-**Bounded Context:** Feedback
+**Bounded Context:** Taking Survey
 
 ### **Description**
 The **Survey-Service** manages the collection and analysis of feedback and survey data from both candidates and employers. It ensures that interactions within the system are smooth and that user experiences are continuously improved based on collected insights.
@@ -351,7 +351,7 @@ The **Survey-Service** manages the collection and analysis of feedback and surve
 
 ## 6. Analytics-Service
 
-**Bounded Context:** Analytics/Reports
+**Bounded Context:** Report Usage
 
 ### **Description**
 The **Report-Service** is responsible for generating comprehensive analytics and reports that provide valuable insights into system performance, user behavior, and operational metrics. It serves administrators and users by offering data-driven information to support decision-making.
