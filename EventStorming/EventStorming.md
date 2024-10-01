@@ -1,7 +1,7 @@
 # Event Storming
  
 ## 1. Event Identification and Sequencing:
-The first phase involved identifying critical events in the "Clearview" system. These events were arranged in a chronological sequence to understand the flow of data and interactions across the platform. By establishing temporal dependencies between events, the team gained clarity on how each event impacts system operations, enhancing the overall user experience. The following key events were identified:
+The first phase involved identifying critical events in the "ClearView" system. These events were arranged chronologically to understand data flow and interactions across the platform. By establishing temporal dependencies between events, the team gained clarity on how each event impacts system operations, enhancing the overall user experience. The following key events were identified:
  
 - **Candidate Registered**: A candidate initiates their journey by registering in the system.
 - **Resume Uploaded**: The candidate uploads their resume to the platform.
@@ -28,7 +28,7 @@ The first phase involved identifying critical events in the "Clearview" system. 
 - **Candidate Marked as Hired**: Employers mark candidates as hired for specific roles.
 - **Candidate Marked as Not Hired**: The system updates candidates' status as "not hired."
 - **Survey Taken**: Both employers and candidates complete surveys about their experience.
-- **Admin Registered**: Clearview system admins register for data access.
+- **Admin Registered**: ClearView system admins register for data access.
 - **Employer Listed**: Admins list all registered employers.
 - **Candidate Listed**: Admins list all registered candidates.
 - **Analytics Data Generated**: The system generates data for reporting and recommendations.
@@ -42,7 +42,7 @@ The second phase focused on identifying the system’s key actors and their asso
 ### User Roles:
 - **Candidate**: Job seekers responsible for registering, uploading resumes, and applying for jobs.
 - **Employer**: Company representatives responsible for company registration, job postings, and candidate management.
-- **Admin**: Clearview system administrators responsible for overseeing system operations, generating reports, and managing data.
+- **Admin**: ClearView system administrators responsible for overseeing system operations, generating reports, and managing data.
  
 ### Key Commands:
 - **Upload Data**: Candidates upload resume files in Word or PDF format.
@@ -112,4 +112,4 @@ Each service operates within its bounded context, promoting a clear separation o
 <img src="images/Event Storming 4.png" alt="Event Storming 4"/>
  
 ## Conclusion:
-The event storming process for the "Clearview" project facilitated a deep understanding of the system’s requirements, user roles, and event flows. By clearly defining events, actors, commands, and bounded contexts, we established a robust foundation for developing a transparent and efficient hiring platform, addressing both technical and business challenges
+The event storming process for the "ClearView" project facilitated a deep understanding of the system’s requirements, user roles, and event flows. By clearly defining events, actors, commands, and bounded contexts, we established a robust foundation for developing a transparent and efficient hiring platform, addressing both technical and business challenges
