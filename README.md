@@ -36,7 +36,20 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
 - [ADRs](#adrs)
 
 ## Introduction
+Discrimination in recruitment continues to be a significant global issue. Research shows that individuals from marginalized groups, such as people with disabilities, women, ethnic minorities, and members of the LGBTQ+ community, encounter various barriers in securing employment.
 
+For instance, a Harvard Business School study found that ethnic minorities are 24% less likely to receive a callback for an interview compared to equally qualified white applicants. Additionally, the Pew Research Center reported that 42% of women experience workplace discrimination. Traditional hiring systems perpetuate unconscious bias, often preventing diverse talent from receiving equal consideration.
+
+Organizations like the Diversity Cyber Council, a 501(c)(3) non-profit, are working to address these inequities, specifically in the tech industry. Through education, training, and staffing opportunities, they aim to create a sustainable and diverse talent pipeline. However, these efforts alone are insufficient without significant changes to the hiring process itself—this is where our application plays a key role.
+
+# Problem Statement
+The current hiring process faces significant challenges in promoting fairness and eliminating bias:
+
+**Lack of Effective Metrics:** There is an absence of reliable metrics to accurately identify and reduce bias during recruitment. Many systems rely on diversity data early in the process, which can unintentionally introduce bias rather than prevent it. Our approach removes diversity-related data at the initial stages, ensuring decisions are made solely based on objective qualifications and experience.
+
+**Ineffective Applicant Tracking Systems (ATS):** Traditional ATS, often referred to as HR systems, are redundant and inefficient in matching suitable candidates to job roles. This leads to missed opportunities, with qualified candidates frequently overlooked or mismatched due to poor filtering mechanisms.
+
+Our solution eliminates diversity data from the early screening stages, creating a more objective and merit-based hiring process focused solely on candidates' qualifications.
 
 ## Requirements
 
