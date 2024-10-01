@@ -104,7 +104,7 @@ Bounded contexts are crucial in defining the boundaries within which specific bu
 ### 5. **Feedback -> Survey-Service**:
 - Manages the feedback collection & survey processes to ensure smooth interaction between candidates and employers regarding their system experience.
 
-### 6. **Analytics/Reports -> Report-Service**:
+### 6. **Analytics/Reports -> Analytics-Service**:
 - Generates analytics and reports, providing system insights for administrators and users.
 
 Each service operates within its bounded context, promoting a clear separation of concerns and streamlining system performance across various domains.
