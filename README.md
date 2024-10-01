@@ -148,7 +148,7 @@ Implementing comprehensive monitoring and observability solutions enables effici
   
 #### Employer  
 ##### Register
- ![Register](UXDesigns/Employer/Employer-Register.jpg)
+ ![Register](UXDesigns/Employer/EmployerRegister.jpg)
  
  ##### Dashboard
  ![Dashboard](UXDesigns/Employer/EmployerDashboard.jpg)
