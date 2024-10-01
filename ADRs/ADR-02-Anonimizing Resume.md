@@ -8,10 +8,13 @@ Accepted
 
 ## Context
 
-In the recruitment process, biases can impact both the AI-driven decision-making systems and human evaluators, potentially skewing the selection of candidates. To minimize such biases, it is essential to remove personal information (PI) from candidate resumes. This PI would be fenced off from any interaction with the LLM during the matching process and would only be revealed post-payment or upon explicit approval. This ensures a fairer evaluation based on skills and experience rather than identifiable characteristics.
+In the recruitment process, biases can impact both the AI-driven decision-making systems and human evaluators, ADR-04-LLM Fine tuningpotentially skewing the selection of candidates. To minimize such biases, it is essential to remove personal information (PI) from candidate resumes. This PI would be fenced off from any interaction with the LLM during the matching process and would only be revealed post-payment or upon explicit approval. This ensures a fairer evaluation based on skills and experience rather than identifiable characteristics.
 
 ## Decision:
 To ensure anonymization of data, any resume uploaded or created through the system will contain PI that is tagged as metadata and never exposed to the LLM. Only non-PI data such as experience, skills, projects, and achievements will be processed for inference or fine-tuning tasks. A stateless, privacy-preserving LLM will be used to detect and filter out any personally identifiable information (PII), ensuring that only sanitized data reaches the AI engine. The stateless LLM will identify PII, which will then be redacted from the original resume. The redacted data will only be unlocked or accessed when required, such as during profile selection or payment.
+
+![anonymizing-resume-flow.pg](images/Kata_ML%20-%20Resume%20Anonymization.png)
+*Anonymization workflow for Candidate's Resume*
 
 ## Consequences
 ### Pros:

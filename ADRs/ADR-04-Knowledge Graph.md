@@ -1,4 +1,4 @@
-# ADR 06: Use of Knowledge Graph
+# ADR 04: Use of Knowledge Graph
 
 ## Date:
 2014-09-30
@@ -12,7 +12,15 @@ In the resume feedback or candidate matching system to Job Descriptions (JD), we
 ## Decision:
 We have decided to implement a [Knowledge Graph](https://doi.org/10.1109/TNNLS.2021.3070843) (KG) for identifying and leveraging the entities, attributes, and relationships present in resumes and job descriptions. A KG can be used in conjunction with a Retrieval-Augmented Generation (RAG) system as the data source. This ensures efficient retrieval, defining relationships between experiences, skills, and job roles. The embeddings and relational mappings in the KG enable a deeper understanding of resumes and job postings.
 
-We will extract keywords and relations to create a richer context for entity-based resume matching, leading to more precise, context-driven feedback generation via RAG. We recommend utilizing cloud-based Neo4j instances, distributed across multiple deployment zones, to accommodate the exponential growth of graph data. Additionally, cloud storage resources can be optimized using context-dense embeddings to efficiently manage space.
+![storing-data-in-kg.png](images/Kata_ML%20-%20Document%20Storage%20Processing.png)
+*Storing data in entity-relation format to Knowledge Graph(KG)*
+
+We will extract keywords and relations to create a richer context for entity-based resume matching, leading to more precise, context-driven feedback generation via RAG. 
+
+![job-matching-phase.png](images/Kata_ML%20-%20Candidate%20Matching%20Flow.png)
+*Use of KG with LLM and Vector DB to provide matching profiles*
+
+We recommend utilizing cloud-based Neo4j instances, distributed across multiple deployment zones, to accommodate the exponential growth of graph data. Additionally, cloud storage resources can be optimized using context-dense embeddings to efficiently manage space.
 
 We expect the system to extract and batch various entities and relationships from resume sections and job descriptions, which will then be saved as KG embeddings.
 

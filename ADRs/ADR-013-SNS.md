@@ -1,4 +1,4 @@
-# ADR-12: SNS(Simple notification Service) Integration
+# ADR-013: SNS(Simple notification Service) Integration
 
 ## Date:
 2024-09-30

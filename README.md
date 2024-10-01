@@ -15,13 +15,14 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
 - [Requirements](#requirements)
     - [Business Requirments](#business-requirments)  
     - [Technical Requirements](#technical-requirements)
-    - [Other Considerations](#other-considerations)
+    - [Assumptions](#assumptions)
+- [Quality Attribute Requirements](#quality-attribute-requirements) 
 - [Architecture Characteristics](#architecture-characteristics) 
     - [Top 3 Characteristics](#top-3-characteristics)
     - [Implicit Characteristics](#implicit-characteristics)
 - [Architecture Approach](#architecture-approach)
-- [Use Journey](#use-journey)
-    - [User experience (UX) design](#user-experience-ux-design)
+    - [Architecture Styles](#architecture-styles)
+- [Exploring components](#exploring-components)
 - [Event Storming](#event-storming)
 - [Context](#context)
     - [Complete Overview](#complete-overview)
@@ -34,6 +35,8 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
     - [AI Engine](#batch-process)
 - [Deployment](#deployment)
 - [ADRs](#adrs)
+- [Use Journey](#use-journey)
+    - [User experience (UX) design](#user-experience-ux-design)
 
 ## Introduction
 Discrimination in recruitment continues to be a significant global issue. Research shows that individuals from marginalized groups, such as people with disabilities, women, ethnic minorities, and members of the LGBTQ+ community, encounter various barriers in securing employment.
@@ -76,7 +79,8 @@ Our solution eliminates diversity data from the early screening stages, creating
 #### Epic-04 :: **Admin Module:**
 - **US-14:** As an admin, I want to **manage user information and internal data,** so that I can ensure system operations run smoothly.
 - **US-15:** As an admin, I want to **generate analytics and reports,** so that I can provide insights on system usage and candidate-employer interactions.
-
+- 
+### Technical Requirments
 #### Epic-05 :: **Technical Requirements:**
 - **US-16:** Richest user interface possible across all deployment platforms.
 - **US-17:** Users must be able to access the system at all times (max 5 minutes per month of unplanned downtime).
@@ -105,7 +109,7 @@ This section outlines the Quality Attribute Requirements that exert a critical i
 ## Architecture Characteristics
 To ensure a successful system implementation, it's vital to prioritize key architecture characteristics. These elements guarantee reliability, availability, and responsiveness, delivering a seamless user experience.
 
-
+### Architecture Styles
 *Figure: Architecture Characteristics*
 ![Architecture Characteristics](/Images/Architecture_Characteristics_Worksheet.png)
 
@@ -141,43 +145,7 @@ Implementing comprehensive monitoring and observability solutions enables effici
 *Figure: Architecture Style*
 ![Architecture Style](/Images/Architecture_Styles_Worksheet.png)
 
-
-### Performance
-
   
-## Use Journey 
-
-
-### User experience (UX) design
-#### Candidate 
-##### Register
- ![Register](UXDesigns/Candidate/CandidateRegister.png)
- 
- ##### Dashboard
- ![Dashboard](UXDesigns/Candidate/DashboardCandidate.png)
-
- ##### [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=0%3A1&node-id=2-2&node-type=canvas&viewport=538%2C192%2C0.13&t=8IGLuCUeOYYQIMy2-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2%3A2)
-
-  
-#### Employer  
-##### Register
- ![Register](UXDesigns/Employer/EmployerRegister.jpg)
- 
- ##### Dashboard
- ![Dashboard](UXDesigns/Employer/EmployerDashboard.jpg)
-
- ##### [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=104%3A8588&node-id=239-5113&node-type=frame&viewport=2015%2C545%2C0.5&t=AQYBmgaBM6dlXAo0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=239%3A5113)
-
-#### Admin 
-##### Register
- ![Register](UXDesigns/Admin/AdminLogin.png)
- 
- ##### Dashboard
- ![Dashboard](UXDesigns/Admin/AdminDashboard.png)
-
- ##### [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=104%3A8587&node-id=239-4832&node-type=canvas&viewport=1322%2C534%2C0.5&t=Fyp3n978SR87r8wR-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=239%3A4832)
-
-
 ## Exploring components
 
 We conducted an Event Storming technique to identify the main components of the Clearview system. This collaborative workshop helped us visualize system workflows, identify domain events, and determine the interactions between components. Through this process, we [identified the necessary components and their relationships](EventStorming/EventStorming.md), informing the design and implementation of the system. Here are the results:
@@ -260,9 +228,6 @@ The **Resume-Service** is dedicated to handling all aspects of resume management
 The **Job-Service** manages the scheduling and fetching of job-related tasks within the system. It ensures that job postings are created, updated, deleted, and retrieved efficiently to facilitate seamless interactions between employers and candidates.
 
 ### **Key Features**
-- **Job Scheduling**
-  - **Automated Posting:** Schedules job postings based on predefined criteria and timelines.
-  - **Recurring Jobs:** Supports recurring job postings for positions that require ongoing recruitment.
 
 - **Job Management**
   - **Create & Edit Jobs:** Allows employers to create new job postings and edit existing ones with detailed descriptions, requirements, and benefits.
@@ -271,10 +236,6 @@ The **Job-Service** manages the scheduling and fetching of job-related tasks wit
 - **Job Retrieval**
   - **Search & Filter:** Provides robust search and filtering capabilities to help users find relevant job postings.
   - **Pagination & Sorting:** Supports efficient data retrieval with pagination and sorting options for large datasets.
-
-- **Integration with Other Services**
-  - **Job-Matcher Integration:** Interfaces with the Job-Matcher-Service to provide up-to-date job postings for matching candidates.
-  - **Notification Triggers:** Works with the Survey-Service to notify users about job-related updates and surveys.
 
 - **Job Analytics**
   - **Performance Metrics:** Tracks metrics such as the number of views, applications, and engagement rates for each job posting.
@@ -426,8 +387,13 @@ Each microservice operates within its defined bounded context, ensuring a clear 
 ## Components
 ![Components](C4Diagram/img/ClearViewC4ComponentDiagram.png)
 ### API Application
-![API Application](/C4Diagram/img/ClearViewC4AIModel.jpeg)
+![API Application](/C4Diagram/img/ClearViewC4ComponentDiagram.png)
 
+### AI Engine
+![AI Engine](/C4Diagram/img/ClearViewC4AIModel.png)
+
+### Analytics Engine
+![Analytics Engine](C4Diagram/img/ClearView%20C4Analyticsengine.png)
 
 ## Deployment
 
@@ -467,15 +433,37 @@ Include CloudWatch for monitoring and metrics collection. Show how it integrates
 ## ADRs
 
 
+## User Journey 
 
+### User experience (UX) design
+#### Candidate 
+##### Register
+ ![Register](UXDesigns/Candidate/CandidateRegister.png)
+ 
+ ##### Dashboard
+ ![Dashboard](UXDesigns/Candidate/DashboardCandidate.png)
 
-## Glossary
-- **AWS** - Amazon Web Services
-- **EKS** - Elastic Kubernets Cluster
-- **EMR** - Elastic Map Reduce
-- **S3** - Simple Storage Service
-- **B2B** - Business to Business
-- **Agencies** - Refering to Onlnie Travel Agencies (OTA)
+ ##### [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=0%3A1&node-id=2-2&node-type=canvas&viewport=538%2C192%2C0.13&t=8IGLuCUeOYYQIMy2-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2%3A2)
+
+  
+#### Employer  
+##### Register
+ ![Register](UXDesigns/Employer/EmployerRegister.jpg)
+ 
+ ##### Dashboard
+ ![Dashboard](UXDesigns/Employer/EmployerDashboard.jpg)
+
+ ##### [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=104%3A8588&node-id=239-5113&node-type=frame&viewport=2015%2C545%2C0.5&t=AQYBmgaBM6dlXAo0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=239%3A5113)
+
+#### Admin 
+##### Register
+ ![Register](UXDesigns/Admin/AdminLogin.png)
+ 
+ ##### Dashboard
+ ![Dashboard](UXDesigns/Admin/AdminDashboard.png)
+
+ ##### [Figma Walkthroug](https://www.figma.com/proto/VS5JPjs071q8xRwnhh2VGi/Architectural-Katas?page-id=104%3A8587&node-id=239-4832&node-type=canvas&viewport=1322%2C534%2C0.5&t=Fyp3n978SR87r8wR-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=239%3A4832)
+
   
 ## References
 - 

@@ -1,4 +1,4 @@
-# ADR 04: Fine-Tuning LLM for Resume Feedback and Candidate Matching
+# ADR 06: Fine-Tuning LLM for Resume Feedback and Candidate Matching
 
 ## Date:
 2024-09-16

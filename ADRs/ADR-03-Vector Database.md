@@ -1,4 +1,4 @@
-# ADR 05: Use of Vector Database
+# ADR 03: Use of Vector Database
 
 ## Date:
 2014-09-30
@@ -13,7 +13,15 @@ In a resume feedback system, users provide details about their experiences, skil
 
 We have decided to implement a [Vector Database](https://doi.org/10.48550/arXiv.2005.11401) integrated with a Retrieval-Augmented Generation (RAG) system. This decision allows for efficient retrieval of semantically similar resumes through vector embeddings, ensuring close matches are identified. The RAG system, supported by large language models (LLMs) with a deep understanding of job openings and hiring processes, facilitates context-aware feedback generation and candidate matching to job descriptions.
 
+
+![vector-db-data-store.png](images/Kata_ML%20-%20Document%20Storage%20Processing.png)
+*Resume or Job Description data can be stored in the Vector Database*
+
+
 The system should enable easy addition, updating, and deletion of resumes. By chunking resumes, we ensure they fit within the token limits of the LLM while maintaining the context. The Vector Database retrieves data in real time, utilizing distributed parallelization and [similarity calculation](https://dl.acm.org/doi/10.5555/645925.671516), which can be seamlessly integrated into any LLM downstream task. This will provide real-time, streaming data responses, significantly enhancing user experience on the platform.
+
+![candidate-resume-feedback-item.png](images/Kata_ML%20-%20Resume%20Creation%20Feedback.png)
+*Integrating the Vector DB in a RAG based feedback architechture*
 
 We expect the system to process resumes with clearly defined sections (e.g., Experience, Skills, Achievements) and job descriptions divided into segments like Role Description, Experience, and Responsibilities.
 

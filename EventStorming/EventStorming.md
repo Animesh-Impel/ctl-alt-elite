@@ -79,8 +79,8 @@ The next phase involved grouping events based on their functionality or business
 - Supports the hiring process, including marking candidates as hired or not hired.
 - Updates job statuses accordingly.
  
-### 6. **Batch Processing**:
-- Fetches job data at specific intervals from registered companies.
+### 6. **Collecting Jobs**:
+- Employer manage jobs.
  
 ### 7. **Feedback Management**:
 - Manages candidate and employer surveys on system performance.
