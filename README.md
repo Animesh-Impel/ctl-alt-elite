@@ -349,7 +349,7 @@ The **Survey-Service** manages the collection and analysis of feedback and surve
 
 ---
 
-## 6. Report-Service
+## 6. Analytics-Service
 
 **Bounded Context:** Analytics/Reports
 
