@@ -1,8 +1,4 @@
-Here is the Architecture Decision Record (ADR) for the ClearView recruitment system:
-
----
-
-### ADR: Architecture Characteristics for ClearView System
+### ADR 19: Architecture Characteristics for ClearView System
 
 #### **Date**: 
 2024-10-15
