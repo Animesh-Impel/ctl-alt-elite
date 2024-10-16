@@ -248,6 +248,11 @@ ClearView component diagram contains following elements:
 ### HR Orchestrator Engine
 ![HR Orchestrator Engine](Images/HR_Orchestrator_Engine.png)
 
+#### Orchestrator
+Receives events from Kafka, assigns tasks to the HR connector job, and sends job status updates back to Kafka to acknowledge them within the ClearView system.
+#### Connector Job
+Retrieves files from S3 storage and sends them to the employer's HR system based on their specific configuration. Pre-built connector libraries are used to streamline the development process for each HR system.
+
 ### AI Engine
 ![AI Engine](/C4Diagram/img/ClearViewC4AIModel.png)
 
