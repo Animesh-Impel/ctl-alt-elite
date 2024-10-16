@@ -14,6 +14,7 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
 - [Ctrl+Alt+Elite - O'Reilly Architectural Katas: Fall 2024](#ctrlaltelite---oreilly-architectural-katas-fall-2024)
   - [Team Members](#team-members)
   - [Contents](#contents)
+  - [Glossary](#glossary)
   - [Introduction](#introduction)
     - [Problem Statement](#problem-statement)
   - [Requirements](#requirements)
@@ -26,7 +27,7 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
       - [Epic-05 :: **Technical Requirements:**](#epic-05--technical-requirements)
   - [Assumptions](#assumptions)
   - [Architecture Characteristics](#architecture-characteristics)
-    - [Architecture Styles](#architecture-styles)
+    - [Architecture Characteristics](#architecture-characteristics)
   - [Top 3 Characteristics](#top-3-characteristics)
     - [1. **Scalability**](#1-scalability)
     - [2. **Performance**](#2-performance)
@@ -77,6 +78,22 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
         - [Figma Walkthrough](#figma-walkthrough-1)
       - [Admin](#admin)
         - [Figma Walkthrough](#figma-walkthrough-2)
+
+## Glossary
+- **ADR** - Architecture Decision Record.
+- **ALB** - Application Load Balancer.
+- **API** - Application Programming Interface.
+- **ATS** - Applicant Tracking Systems.
+- **AWS** - Amazon Web Services.
+- **DR/BCP** - Disaster Recovery/Business Continuity Planning.
+- **EC2** - Elastic Compute Cloud.
+- **EMR** - Elastic MapReduce.
+- **HRMS** - Human Resource Management Systems.
+- **LLM** - Large Language Model.
+- **RDS** - Relational Database Service.
+- **S3** - Simple Storage Service.
+- **SNS** - Simple Notification Service.
+- **VPC** - Virtual Private Cloud.
 
 ## Introduction
 Discrimination in recruitment continues to be a significant global issue. Research shows that individuals from marginalized groups, such as people with disabilities, women, ethnic minorities, and members of the LGBTQ+ community, encounter various barriers in securing employment.
@@ -136,9 +153,11 @@ Our solution eliminates diversity data from the early screening stages, creating
 - Resumes will be uploaded in PDF or MS word format.
 
 ## Architecture Characteristics
+[ARD-19](ADRs/ADR-19-Architecture-Characteristics.md)
+
 To ensure a successful system implementation, it's vital to prioritize key architecture characteristics. These elements guarantee reliability, availability, and responsiveness, delivering a seamless user experience.
 
-### Architecture Styles
+### Architecture Characteristics
 ![Architecture Characteristics](/Images/Architecture_Characteristics_Worksheet.png)
 
 ## Top 3 Characteristics
@@ -168,8 +187,11 @@ Implementing comprehensive monitoring and observability solutions enables effici
 
 
 ## Architecture Approach
-### Architecture Style
+[ARD-20](ADRs/ADR-20-Architecture-Style.md)
 
+We have decided to adopt an architectural style that is primarily event-driven, with microservices as supporting components for ClearView's recruitment system. This hybrid architecture will provide a flexible and modular approach to meet the system's core requirements.
+
+### Architecture Style
 ![Architecture Style](/Images/Architecture_Styles_Worksheet.png)
 
   
@@ -206,8 +228,8 @@ ClearView context diagram contains following elements:
 * *HR Orchechrator engine* - Handles connections with HRMS systems and facilitates the sending of unlocked resumes. [ADR-12](ADRs/ADR-12-OrchestratorEngine.md%20Integration.md)
 * *Analytics engine* - Provides an analytics interface for end users, either embedded in the Single Page Application or accessed directly by admins. It also processes events and transactional data for reporting.
 * *Event Brocker* - Stores all application events, which are used by other components in an event-driven architecture. [ADR-15](ADRs/ADR-15-Kafka%20as%20event%20broker.md)
-* *Trascational database* - A database used by the microservices or macroservices to store data such as users, roles, and resumes, etc.
-* *Object Store* - Stores resumes in their raw format in a secure way
+* *Trascational database* - A database used by the microservices or macroservices to store data such as users, roles, and resumes, etc. [ADR-08](ADRs/ADR-08-transactional-database-selection-for-application.md)
+* *Object Store* - Stores resumes in their raw format in a secure way. [ADR-18](ADRs/ADR-18-Object-Store.md)
   
 ## Components
 ### API Application
@@ -224,8 +246,8 @@ ClearView component diagram contains following elements:
 * *Invoice API (Module)* - Invoice data will be handled by the Invoice API.
 
 ### HR Orchestrator Engine
+![HR Orchestrator Engine](Images/HR_Orchestrator_Engine.png)
 
-[ADR-12: Orchestrator Engine Integration using Kafka](ADRs/ADR-12-OrchestratorEngine.md%20Integration.md)
 ### AI Engine
 ![AI Engine](/C4Diagram/img/ClearViewC4AIModel.png)
 
@@ -294,23 +316,26 @@ Our Krakend API Gatway uses ALB for providing public access
 Include CloudWatch for monitoring and metrics collection. Show how it integrates with other services.  
 
 ## ADRs
-- [ADR-01: Event-Driven Architecture](ADRs/ADR-01-Event%20Driven.md)
+- [ADR 01: Event-Driven Architecture](ADRs/ADR-01-Event%20Driven.md)
 - [ADR 02: Anonymizing the Resume for LLM Use and Candidate Matching](ADRs/ADR-02-Anonimizing%20Resume.md)
 - [ADR 03: Use of Vector Database](ADRs/ADR-03-Vector%20Database.md)
 - [ADR 04: Use of Knowledge Graph](ADRs/ADR-04-Knowledge%20Graph.md)
 - [ADR 05: Re-Ranking the matched documents for resume feedback and job matching](ADRs/ADR-05-Document-ReRanker.md)
 - [ADR 06: Fine-Tuning LLM for Resume Feedback and Candidate Matching](ADRs/ADR-06-LLM%20Fine%20tuning.md)
-- [ADR-07 Database selection for reporting](ADR-07-database-seclection-for-reporting.md)
-- [ADR-08 Transactional database selection for application](ADRs/ADR-08-transactional-database-selection-for-application.md)
-- [ADR-09: Golang Programing Language](ADRs/ADR-09-Golang%20Programing%20Language.md)
-- [ADR-10: React Application](ADRs/ADR-10-React%20Application.md)
-- [ADR-11: Stripe Payment System](ADRs/ADR-11-Stripe%20Payment%20System.md)
-- [ADR-12: Orchestrator Engine Integration using Kafka](ADRs/ADR-12-OrchestratorEngine.md%20Integration.md)
-- [ADR-13: SNS(Simple notification Service) Integration](ADRs/ADR-13-SNS.md)
-- [ADR-14: AWS Cloud Provider](ADRs/ADR-14-AWS%20Cloud%20Provider.md)
-- [ADR-015: Event Broker using Kafka](ADRs/ADR-15-Kafka%20as%20event%20broker.md)
-- [ADR 016: Business Intelligence Solution Implementation](ADRs/ADR-16-Business%20Intelligence.md)
-- [ADR-17: Amazon Redshift](ADRs/ADR-17-Amazon-Redshift.md)
+- [ADR 07 Database selection for reporting](ADR-07-database-seclection-for-reporting.md)
+- [ADR 08 Transactional database selection for application](ADRs/ADR-08-transactional-database-selection-for-application.md)
+- [ADR 09: Golang Programing Language](ADRs/ADR-09-Golang%20Programing%20Language.md)
+- [ADR 10: React Application](ADRs/ADR-10-React%20Application.md)
+- [ADR 11: Stripe Payment System](ADRs/ADR-11-Stripe%20Payment%20System.md)
+- [ADR 12: Orchestrator Engine Integration using Kafka](ADRs/ADR-12-OrchestratorEngine.md%20Integration.md)
+- [ADR 13: SNS(Simple notification Service) Integration](ADRs/ADR-13-SNS.md)
+- [ADR 14: AWS Cloud Provider](ADRs/ADR-14-AWS%20Cloud%20Provider.md)
+- [ADR 15: Event Broker using Kafka](ADRs/ADR-15-Kafka%20as%20event%20broker.md)
+- [ADR 16: Business Intelligence Solution Implementation](ADRs/ADR-16-Business%20Intelligence.md)
+- [ADR 17: Amazon Redshift](ADRs/ADR-17-Amazon-Redshift.md)
+- [ADR 18: Object Store](ADRs/ADR-18-Object-Store.md)
+- [ADR 19: Architecture Characteristics](ADRs/ADR-19-Architecture-Characteristics.md)
+- [ADR 20: Architecture Style](ADRs/ADR-20-Architecture-Style.md)
 
 ## User Journey 
 
