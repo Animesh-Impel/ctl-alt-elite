@@ -14,7 +14,6 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
 - [Ctrl+Alt+Elite - O'Reilly Architectural Katas: Fall 2024](#ctrlaltelite---oreilly-architectural-katas-fall-2024)
   - [Team Members](#team-members)
   - [Contents](#contents)
-  - [Glossary](#glossary)
   - [Introduction](#introduction)
     - [Problem Statement](#problem-statement)
   - [Requirements](#requirements)
@@ -70,6 +69,7 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
       - [Application Load Balancers](#application-load-balancers)
       - [CloudWatch and Metrics](#cloudwatch-and-metrics)
   - [ADRs](#adrs)
+  - [Glossary](#glossary)
   - [User Journey](#user-journey)
     - [User experience (UX) design](#user-experience-ux-design)
       - [Candidate](#candidate)
@@ -79,21 +79,6 @@ Hello! We are the Ctrl+Alt+Elite team hailing from Bangalore, India, and we are 
       - [Admin](#admin)
         - [Figma Walkthrough](#figma-walkthrough-2)
 
-## Glossary
-- **ADR** - Architecture Decision Record.
-- **ALB** - Application Load Balancer.
-- **API** - Application Programming Interface.
-- **ATS** - Applicant Tracking Systems.
-- **AWS** - Amazon Web Services.
-- **DR/BCP** - Disaster Recovery/Business Continuity Planning.
-- **EC2** - Elastic Compute Cloud.
-- **EMR** - Elastic MapReduce.
-- **HRMS** - Human Resource Management Systems.
-- **LLM** - Large Language Model.
-- **RDS** - Relational Database Service.
-- **S3** - Simple Storage Service.
-- **SNS** - Simple Notification Service.
-- **VPC** - Virtual Private Cloud.
 
 ## Introduction
 Discrimination in recruitment continues to be a significant global issue. Research shows that individuals from marginalized groups, such as people with disabilities, women, ethnic minorities, and members of the LGBTQ+ community, encounter various barriers in securing employment.
@@ -153,9 +138,10 @@ Our solution eliminates diversity data from the early screening stages, creating
 - Resumes will be uploaded in PDF or MS word format.
 
 ## Architecture Characteristics
-[ARD-19](ADRs/ADR-19-Architecture-Characteristics.md)
 
 To ensure a successful system implementation, it's vital to prioritize key architecture characteristics. These elements guarantee reliability, availability, and responsiveness, delivering a seamless user experience.
+
+[ARD-19](ADRs/ADR-19-Architecture-Characteristics.md)
 
 ### Architecture Characteristics
 ![Architecture Characteristics](/Images/Architecture_Characteristics_Worksheet.png)
@@ -187,16 +173,17 @@ Implementing comprehensive monitoring and observability solutions enables effici
 
 
 ## Architecture Approach
-[ARD-20](ADRs/ADR-20-Architecture-Style.md)
 
 We have decided to adopt an architectural style that is primarily event-driven, with microservices as supporting components for ClearView's recruitment system. This hybrid architecture will provide a flexible and modular approach to meet the system's core requirements.
+
+[ARD-20](ADRs/ADR-20-Architecture-Style.md)
 
 ### Architecture Style
 ![Architecture Style](/Images/Architecture_Styles_Worksheet.png)
 
   
 ## Event Storming
-We conducted an Event Storming technique to identify the main components of the Clearview system. This collaborative workshop helped us visualize system workflows, identify domain events, and determine the interactions between components. Through this process, we [identified the necessary components and their relationships](EventStorming/EventStorming.md), informing the design and implementation of the system. Here are the results:
+We conducted an Event Storming technique to identify the main components of the ClearView system. This collaborative workshop helped us visualize system workflows, identify domain events, and determine the interactions between components. Through this process, we [identified the necessary components and their relationships](EventStorming/EventStorming.md), informing the design and implementation of the system. Here are the results:
 
 <img src="EventStorming/images/components.png" />
 
@@ -205,11 +192,11 @@ Each microservice operates within its defined bounded context, ensuring a clear 
 ## Context
 ### Complete Overview
 
-![Overview](/C4Diagram/img/ClearViewC4%20diagramOverview.png)
+![Overview](/C4Diagram/ClearViewC4DiagramOverview.png)
 
 ### Context Diagram
 C1 in the C4 model, known as the Context view, offers a bird's-eye perspective of the system, illustrating its external interactions and dependencies. It depicts the system as a single entity surrounded by external actors, and environments with which it interacts. This view helps stakeholders understand the system's place within its broader ecosystem and the key interactions it has with its surroundings.
-![Context](/C4Diagram/img/ClearView-Context%20diagram.png)
+![Context](/C4Diagram/ClearViewContextDiagram.png)
 ClearView context diagram contains following elements:
 
 * *Candidate (Actor)*  - A  Candidate is a professional who seeking a less tedious and more equitable hiring process that values their skills and abilities. 
@@ -221,7 +208,7 @@ ClearView context diagram contains following elements:
 
 
 ## Containers
-![Containers](/C4Diagram/img/ClearViewC4%20diagramCS.png)
+![Containers](/C4Diagram/ClearViewC4ContainerDiagram.png)
 
 * *Single Page Application*  - The frontend application that provides an interface for all types of users. 
 * *API Application*  - A REST API built using microservices or macroservices, which is utilized by the frontend application. We use golang as a programming language [ADR-09](ADRs/ADR-09-Golang%20Programing%20Language.md)
@@ -233,7 +220,7 @@ ClearView context diagram contains following elements:
   
 ## Components
 ### API Application
-![API Application](/C4Diagram/img/ClearViewC4ComponentDiagram.png)
+![API Application](/C4Diagram/ClearViewC4ComponentDiagram.png)
 ClearView component diagram contains following elements:
 
 * *API Gateway (module)*  -The API Gateway serves as a bridge between external clients (users or systems) and internal services. It consolidates API requests, managing tasks such as request routing, composition, and often implementing features like rate limiting, security, and monitoring.
@@ -246,7 +233,7 @@ ClearView component diagram contains following elements:
 * *Invoice API (Module)* - Invoice data will be handled by the Invoice API.
 
 ### HR Orchestrator Engine
-![HR Orchestrator Engine](Images/HR_Orchestrator_Engine.png)
+![HR Orchestrator Engine](/C4Diagram/ClearViewHROrchestratorEngine.png)
 
 #### Orchestrator
 Receives events from Kafka, assigns tasks to the HR connector job, and sends job status updates back to Kafka to acknowledge them within the ClearView system.
@@ -254,7 +241,7 @@ Receives events from Kafka, assigns tasks to the HR connector job, and sends job
 Retrieves files from S3 storage and sends them to the employer's HR system based on their specific configuration. Pre-built connector libraries are used to streamline the development process for each HR system.
 
 ### AI Engine
-![AI Engine](/C4Diagram/img/ClearViewC4AIModel.png)
+![AI Engine](/C4Diagram/ClearViewC4AIModel.png)
 
 #### Vector Database
 Any resume that is created or uploaded, along with any job posting submitted, will be parsed into specific sections (e.g., skills, experience, job role) and then stored in the Vector Database with corresponding context embeddings. Detailed information in [ADR-03](ADRs/ADR-03-Vector%20Database.md).
@@ -274,7 +261,7 @@ This approach provides high precision, reduces noise, and ensures an efficient, 
 
 
 ### Analytics Engine
-![Analytics Engine](C4Diagram/img/ClearView%20C4Analyticsengine.png)
+![Analytics Engine](C4Diagram/ClearView%20C4Analyticsengine.png)
 Analytics Engine is used to process and organize all user, resume, job, interview, and feedback data, transforming it into a structured reporting format for analysis and insights.
 #### Analytic Database
 Amazon Redshift is a cloud-based data warehouse. It is specifically optimized for handling large-scale data analytics and reporting.
@@ -341,6 +328,22 @@ Include CloudWatch for monitoring and metrics collection. Show how it integrates
 - [ADR 18: Object Store](ADRs/ADR-18-Object-Store.md)
 - [ADR 19: Architecture Characteristics](ADRs/ADR-19-Architecture-Characteristics.md)
 - [ADR 20: Architecture Style](ADRs/ADR-20-Architecture-Style.md)
+
+## Glossary
+- **ADR** - Architecture Decision Record.
+- **ALB** - Application Load Balancer.
+- **API** - Application Programming Interface.
+- **ATS** - Applicant Tracking Systems.
+- **AWS** - Amazon Web Services.
+- **DR/BCP** - Disaster Recovery/Business Continuity Planning.
+- **EC2** - Elastic Compute Cloud.
+- **EMR** - Elastic MapReduce.
+- **HRMS** - Human Resource Management Systems.
+- **LLM** - Large Language Model.
+- **RDS** - Relational Database Service.
+- **S3** - Simple Storage Service.
+- **SNS** - Simple Notification Service.
+- **VPC** - Virtual Private Cloud.
 
 ## User Journey 
 
