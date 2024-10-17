@@ -1,4 +1,4 @@
-# ADR-12: Orchastration engine for HR system integration
+# ADR-12: Orchestration engine for HR system integration
 
 ## Date:
 2014-09-30

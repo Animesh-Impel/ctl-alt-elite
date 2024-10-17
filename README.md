@@ -319,7 +319,7 @@ Include CloudWatch for monitoring and metrics collection. Show how it integrates
 - [ADR 09: Golang Programing Language](ADRs/ADR-09-Golang%20Programing%20Language.md)
 - [ADR 10: React Application](ADRs/ADR-10-React%20Application.md)
 - [ADR 11: Stripe Payment System](ADRs/ADR-11-Stripe%20Payment%20System.md)
-- [ADR 12: Orchestrator Engine Integration using Kafka](ADRs/ADR-12-OrchestratorEngine.md%20Integration.md)
+- [ADR 12: Orchestration engine for HR system integration](ADRs/ADR-12-OrchestratorEngine.md%20Integration.md)
 - [ADR 13: SNS(Simple notification Service) Integration](ADRs/ADR-13-SNS.md)
 - [ADR 14: AWS Cloud Provider](ADRs/ADR-14-AWS%20Cloud%20Provider.md)
 - [ADR 15: Event Broker using Kafka](ADRs/ADR-15-Kafka%20as%20event%20broker.md)
