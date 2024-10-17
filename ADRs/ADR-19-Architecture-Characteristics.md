@@ -70,10 +70,10 @@ The ClearView application aims to provide an intelligent recruitment platform th
 
 ### Top Three Architectural Characteristics
 
-1. **Security**:
-    - Protects sensitive data and AI insights.
-    - Complies with data privacy regulations.
-    - Prevents unauthorized access and data breaches.
+1. **Scalability**:
+    - Supports growing business demands by efficiently managing increased data and traffic.
+    - Ensures that AI processing can expand to handle more complex tasks and larger datasets.
+    - Enables the system to dynamically adjust resources to maintain performance during these high-demand periods.
 
 2. **Performance**:
     - Ensures low-latency interactions with AI and HRMS systems.
