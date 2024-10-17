@@ -233,6 +233,8 @@ ClearView component diagram contains following elements:
 * *Invoice API (Module)* - Invoice data will be handled by the Invoice API.
 
 ### HR Orchestrator Engine
+[ARD-12](ADRs/ADR-12-OrchestratorEngine.md)
+
 ![HR Orchestrator Engine](/C4Diagram/ClearViewHROrchestratorEngine.png)
 
 #### Orchestrator
@@ -260,13 +262,15 @@ Finally, we will use context-driven prompts within the LLM to generate tailored 
 This approach provides high precision, reduces noise, and ensures an efficient, context-aware feedback loop for both candidates and HR professionals with near real-time feedback and highly performant candidate matching.
 
 
-### Analytics Engine
+### 
 ![Analytics Engine](C4Diagram/ClearView%20C4Analyticsengine.png)
-Analytics Engine is used to process and organize all user, resume, job, interview, and feedback data, transforming it into a structured reporting format for analysis and insights.
+Analytics Engine is used to process and organize all user, resume, job, interview, and feedback data, transforming it into a structured reporting format for analysis and insights. 
 #### Analytic Database
 Amazon Redshift is a cloud-based data warehouse. It is specifically optimized for handling large-scale data analytics and reporting.
+[ARD-17](ADRs/ADR-17-Amazon-Redshift.md)
 #### BI Software
-Amazon QuickSight is a cloud-powered business intelligence (BI) service that integrates well with data sources like Amazon Redshift, enabling organizations to build data visualizations, dashboards, and reports as part of an analytics engine.
+Amazon QuickSight is a cloud-powered business intelligence (BI) service that integrates well with data sources like Amazon Redshift, enabling organizations to build data visualizations, dashboards, and reports as part of an analytics engine.[ARD-16](ADRs/ADR-16-Business%20Intelligence.md)
+
 #### Batch Job
 ##### Amazon Glue
 Amazon Glue is a fully managed Extract, Transform, Load (ETL) service designed to clean, transform, and load data into a data warehouse (e.g., Amazon Redshift) or a data lake (e.g., S3).
@@ -314,12 +318,12 @@ Include CloudWatch for monitoring and metrics collection. Show how it integrates
 - [ADR 04: Use of Knowledge Graph](ADRs/ADR-04-Knowledge%20Graph.md)
 - [ADR 05: Re-Ranking the matched documents for resume feedback and job matching](ADRs/ADR-05-Document-ReRanker.md)
 - [ADR 06: Fine-Tuning LLM for Resume Feedback and Candidate Matching](ADRs/ADR-06-LLM%20Fine%20tuning.md)
-- [ADR 07 Database selection for reporting](ADR-07-database-seclection-for-reporting.md)
+- [ADR 07 Database selection for reporting](ADRs/ADR-07-database-seclection-for-reporting.md)
 - [ADR 08 Transactional database selection for application](ADRs/ADR-08-transactional-database-selection-for-application.md)
 - [ADR 09: Golang Programing Language](ADRs/ADR-09-Golang%20Programing%20Language.md)
 - [ADR 10: React Application](ADRs/ADR-10-React%20Application.md)
 - [ADR 11: Stripe Payment System](ADRs/ADR-11-Stripe%20Payment%20System.md)
-- [ADR 12: Orchestration engine for HR system integration](ADRs/ADR-12-OrchestratorEngine.md%20Integration.md)
+- [ADR 12: Orchestration engine for HR system integration](ADRs/ADR-12-OrchestratorEngine.md)
 - [ADR 13: SNS(Simple notification Service) Integration](ADRs/ADR-13-SNS.md)
 - [ADR 14: AWS Cloud Provider](ADRs/ADR-14-AWS%20Cloud%20Provider.md)
 - [ADR 15: Event Broker using Kafka](ADRs/ADR-15-Kafka%20as%20event%20broker.md)

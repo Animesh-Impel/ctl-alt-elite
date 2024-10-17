@@ -1,11 +1,12 @@
-### ADR 19: Architecture Characteristics for ClearView System
+# ADR 19: Architecture Characteristics for ClearView System
 
-#### **Date**: 
-2024-10-15
-#### **Status**: 
-Approved
+## Date:
+2024-09-30
 
-#### **Context**
+## Status:
+Accepted  
+
+## Context:
 The ClearView application aims to provide an intelligent recruitment platform that leverages AI LLM (Large Language Model) for resume recommendations, candidate scoring, and job matching while integrating seamlessly with multiple HRMS (Human Resource Management Systems) platforms. Given the sensitivity of data, the complexity of workflows, and the need for personalized and adaptive experiences, the architectural design must prioritize security, performance, and interoperability. These characteristics will address the system's requirements for handling large datasets, real-time AI interactions, and seamless integrations with external HRMS.
 
 ### Architectural Characteristics
